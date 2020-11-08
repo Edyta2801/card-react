@@ -4,12 +4,15 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import {
+    CardHeader,
+    CardMedia,
+    CardExcerpt,
+    CardShowMoreButton,
+    CardReveal
+  } from "./";
+  import "./card.css";
 
-import CardHeader from './CardHeader';
-import CardMedia from './CardMedia';
-import CardExcerpt from './CardExcerpt';
-import CardShowMoreButton from './CardShowMoreButton';
-import CardReveal from './CardReveal';
 
 library.add(fas);
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 function CardShowMoreButton({clickHandler, children}){
     return(
-        <button onClick={clickHandler} className="card--showmore">
+      <button onClick={clickHandler} className="card--showmore">
       {children}
     </button>
     )

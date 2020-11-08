@@ -1,0 +1,42 @@
+.card {
+    padding      : 20px;
+    margin-top   : 20px;
+    border-radius: 3px;
+    border       : 2px solid #ccc;
+}
+
+.card--header {
+    font-size    : 22px;
+    font-weight  : 400;
+    margin-bottom: 16px;
+}
+
+.card--excerpt {
+    margin-top: 16px;
+}
+
+.card--showmore {
+    margin          : 0 auto;
+    border          : 0;
+    padding         : 12px;
+    cursor          : pointer;
+    background-color: transparent;
+    transition      : opacity 0.3s ease;
+}
+
+.card--showmore:hover {
+    opacity: 0.5;
+}
+
+.card--content {
+    margin-top      : 20px;
+    padding         : 15px;
+    background-color: #ccc;
+    color           : #fff;
+    display         : none;
+}
+
+.card--content.is-open {
+    display   : block;
+    text-align: left;
+}
