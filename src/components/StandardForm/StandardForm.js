@@ -12,6 +12,14 @@ class StandardForm extends Component {
         errorMsh: {}
     }
 
+    validateForm = () => {
+        const { usernameValid, emailValid, passwordValid, passwordConfirmValid } = this.state;
+
+        this.setState({ formValid: usernameValid && emailValid && passwordValid && passwordConfirmValid })
+
+    }
+
+
     handleChange = (event) => {
         const { target: { id, value } } = event
         this.setState({ [id]: value })
