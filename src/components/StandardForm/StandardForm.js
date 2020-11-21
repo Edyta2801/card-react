@@ -17,8 +17,8 @@ class StandardForm extends Component {
         this.setState({ [id]: value })
     };
 
-    
-    
+
+
     validateUsername = () => {
         const { username } = this.state;
         let usernameValid = true;
@@ -31,7 +31,41 @@ class StandardForm extends Component {
         this.setState({ usernameValid, errorMsg });
     }
 
-    
+    validateEmail = () => {
+        const { email } = this.state;
+        let emailValid = true;
+        let errorMsg = { ...this.state.errorMsg }
+
+        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+            emailValid = false;
+            errorMsg.email = 'Invalid email format';
+        }
+        this.setState({ emailValid, errorMsg });
+    }
+
+    validatePassword = () => {
+        const { password } = this.state;
+        let passwordValid = true;
+        let errorMsg = { ...this.state.errorMsg };
+
+        if (password.lenght < 8) {
+            passwordValid = false;
+            errorMsg.password = 'Password should be at least 8 characters'
+        }
+        this.setState({ passwordValid, errorMsg })
+    }
+
+    validateConfirmPassword = () => {
+        const { passwordConfirm, password } = this.state;
+        let passwordConfirmValid = true;
+        let errorMsg = { ...this.state.errorMsg };
+
+        if (password !== passwordConfirm) {
+            passwordConfirmValid = false;
+            errorMsg.passwordConfirm = 'Password do not match';
+        }
+        this.setState({ passwordConfirmValid, errorMsg });
+    }
 
 
 
