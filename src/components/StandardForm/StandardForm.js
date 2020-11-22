@@ -20,10 +20,10 @@ class StandardForm extends Component {
     }
 
 
-    handleChange = (event) => {
-        const { target: { id, value } } = event
-        this.setState({ [id]: value })
-    };
+    // handleChange = (event) => {
+    //     const { target: { id, value } } = event
+    //     this.setState({ [id]: value })
+    // }
 
 
 
@@ -34,9 +34,9 @@ class StandardForm extends Component {
 
         if (username.length < 6 || username.length > 15) {
             usernameValid = false;
-            errorMsg.username = 'Username should be betweeen 6 and 15 characters'
+            errorMsg.username = 'Username should be between 6 and 15 characters'
         }
-        this.setState({ usernameValid, errorMsg });
+        this.setState({ usernameValid, errorMsg }, this.validateForm);
     }
 
     validateEmail = () => {
@@ -48,7 +48,7 @@ class StandardForm extends Component {
             emailValid = false;
             errorMsg.email = 'Invalid email format';
         }
-        this.setState({ emailValid, errorMsg });
+        this.setState({ emailValid, errorMsg }, this.validateForm);
     }
 
     validatePassword = () => {
@@ -56,11 +56,11 @@ class StandardForm extends Component {
         let passwordValid = true;
         let errorMsg = { ...this.state.errorMsg };
 
-        if (password.lenght < 8) {
+        if (password.length < 8) {
             passwordValid = false;
             errorMsg.password = 'Password should be at least 8 characters'
         }
-        this.setState({ passwordValid, errorMsg })
+        this.setState({ passwordValid, errorMsg }, this.validateForm)
     }
 
     validateConfirmPassword = () => {
@@ -72,7 +72,8 @@ class StandardForm extends Component {
             passwordConfirmValid = false;
             errorMsg.passwordConfirm = 'Password do not match';
         }
-        this.setState({ passwordConfirmValid, errorMsg });
+        this.setState({ passwordConfirmValid, errorMsg }, this.validateForm);
+
     }
 
 
@@ -87,25 +88,25 @@ class StandardForm extends Component {
                     <div className='form-group'>
                         <label htmlFor='username'>Username</label>
                         <input type='text' className='form-control' id='username' value={this.state.username}
-                            onChange={this.handleChange} />
+                            onChange={(e) => this.setState({ username: e.target.value }, this.validateUsername)} />
                     </div>
 
                     {/* Email */}
                     <div className='form-group'>
                         <label htmlFor='email'>Email</label>
-                        <input type='email' className='form-control' id='email' value={this.state.email} onChange={this.handleChange} />
+                        <input type='email' className='form-control' id='email' value={this.state.email} onChange={(e) => this.setState({ username: e.target.value }, this.validateEmail)} />
                     </div>
 
                     {/* Passworrd */}
                     <div className='form-group'>
                         <label htmlFor='password'>Password</label>
-                        <input type='password' className='form-control' id='password' value={this.state.password} onChange={this.handleChange} />
+                        <input type='password' className='form-control' id='password' value={this.state.password} onChange={(e) => this.setState({ username: e.target.value }, this.validatePassword)} />
                     </div>
 
                     {/* Confirm Password */}
                     <div className='form-group'>
                         <label htmlFor='confirmPassword'>Confirm Password </label>
-                        <input type='password' className='form-control' id='confirmPassword' value={this.state.confirmPassword} onChange={this.handleChange} />
+                        <input type='password' className='form-control' id='confirmPassword' value={this.state.confirmPassword} onChange={(e) => this.setState({ username: e.target.value }, this.validateConfirmPassword)} />
                     </div>
 
                 </form>
