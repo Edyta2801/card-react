@@ -86,49 +86,65 @@ class StandardForm extends Component {
 
     }
 
-
+    resetForm = () => {
+        this.setState = {
+            username: '', usernameValid: false,
+            email: '', emailValid: false,
+            password: '', passwordValid: false,
+            passwordConfirm: '', passwordConfirmValid: false,
+            formaValid: false,
+            errorMsg: {}
+        }
+    }
 
 
     render() {
         return (
             <div>
-                <h5>Standard Form</h5>
-                <form>
-                    {/* Username */}
-                    <div className='form-group'>
-                        <label htmlFor='username'>Username</label>
-                        <input type='text' className='form-control' id='username' value={this.state.username}
-                            onChange={(e) => this.setState({ username: e.target.value }, this.validateUsername)} />
-                    <span><ValidationMessage valid={this.state.usernameValid} message={this.state.errorMsg.username}/>
-                    </span>
-                    </div>
+                <div className="container">
+                        <h5>Standard Form</h5>
+                        <form>
+                            {/* Username */}
+                            <div className='form-group'>
+                                <label htmlFor='username'>Username</label>
+                                <input type='text' className='form-control' id='username' value={this.state.username}
+                                    onChange={(e) => this.setState({ username: e.target.value }, this.validateUsername)} />
+                                <span><ValidationMessage valid={this.state.usernameValid} message={this.state.errorMsg.username} />
+                                </span>
+                            </div>
 
-                    {/* Email */}
-                    <div className='form-group'>
-                        <label htmlFor='email'>Email</label>
-                        <input type='email' className='form-control' id='email' value={this.state.email} onChange={(e) => this.setState({ email: e.target.value }, this.validateEmail)} />
-                        <span><ValidationMessage valid={this.state.emailValid} message={this.state.errorMsg.email}/>
-                    </span>
-                    </div>
+                            {/* Email */}
+                            <div className='form-group'>
+                                <label htmlFor='email'>Email</label>
+                                <input type='email' className='form-control' id='email' value={this.state.email} onChange={(e) => this.setState({ email: e.target.value }, this.validateEmail)} />
+                                <span><ValidationMessage valid={this.state.emailValid} message={this.state.errorMsg.email} />
+                                </span>
+                            </div>
 
-                    {/* Passworrd */}
-                    <div className='form-group'>
-                        <label htmlFor='password'>Password</label>
-                        <input type='password' className='form-control' id='password' value={this.state.password} onChange={(e) => this.setState({ password: e.target.value }, this.validatePassword)} />
-                        <span><ValidationMessage valid={this.state.passwordValid} message={this.state.errorMsg.password}/>
-                    </span>
-                    </div>
+                            {/* Password */}
+                            <div className='form-group'>
+                                <label htmlFor='password'>Password</label>
+                                <input type='password' className='form-control' id='password' value={this.state.password} onChange={(e) => this.setState({ password: e.target.value }, this.validatePassword)} />
+                                <span><ValidationMessage valid={this.state.passwordValid} message={this.state.errorMsg.password} />
+                                </span>
+                            </div>
 
-                    {/* Confirm Password */}
-                    <div className='form-group'>
-                        <label htmlFor='confirmPassword'>Confirm Password </label>
-                        <input type='password' className='form-control' id='confirmPassword' value={this.state.confirmPassword} onChange={(e) => this.setState({ passwordConfirm: e.target.value }, this.validateConfirmPassword)} />
-                        <span><ValidationMessage valid={this.state.passwordConfirmValid} message={this.state.errorMsg.passwordConfirm}/>
-                    </span>
-                    </div>
+                            {/* Confirm Password */}
+                            <div className='form-group'>
+                                <label htmlFor='confirmPassword'>Confirm Password </label>
+                                <input type='password' className='form-control' id='confirmPassword' value={this.state.confirmPassword} onChange={(e) => this.setState({ passwordConfirm: e.target.value }, this.validateConfirmPassword)} />
+                                <span><ValidationMessage valid={this.state.passwordConfirmValid} message={this.state.errorMsg.passwordConfirm} />
+                                </span>
+                            </div>
+                            <div className='btn-group'>
+                                <button className='btn btn-primary' type='submit' disabled={!this.state.formValid}>Submit</button>
+                                <button className='btn btn-danger' onClick={this.resetForm}>Reset</button>
+                            </div>
 
-                </form>
-            </div>
+                        </form>
+                    </div>
+                {/* </div> */}
+            </div >
         );
     }
 }

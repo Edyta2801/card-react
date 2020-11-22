@@ -9,8 +9,9 @@ import { RegisterForm } from './components/RegisterForm'
 function App() {
   return (
     <div className="App">
-      <RegisterForm />
       <StandardForm />
+      <RegisterForm />
+
       {/* <Card
        headline="Headline"
        image="https://picsum.photos/300/200"

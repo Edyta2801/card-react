@@ -4,7 +4,7 @@ Przygotuj component Card podobny do [tego](https://material-ui.com/components/ca
 
 `<Card title="Shrim and Chorizo Paella" intro="This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the musse" />`
 
-## 2. Walidacja formularzy
+# 2. Walidacja formularzy
 Przygotuj formularz, w którym użytkownik będzie wprowadzał swoje dane:
 
 #### imię (element input)
@@ -19,5 +19,5 @@ Jeśli jakieś pole nie zostało wypełnione, wówczas aplikacja ustawi czerwony
 
 Jeśli wszystkie informacje zostały wprowadzone, to wówczas wszystkie pola zostaną wyczyszczone (nie będzie w nich danych), a na ekranie pojawi się komunikat "Dziękujemy za wysłanie"
 
-## 3. Formik lub React Hook Form
+# 3. Formik lub React Hook Form
 Wykonaj to zadanie 2 za pomocą biblioteki Formik lub React Hook Form

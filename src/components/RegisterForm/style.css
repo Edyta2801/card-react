@@ -49,9 +49,13 @@ div {
 }
 
 form {
-    width    : 100%;
-    display  : flex;
-    flex-wrap: wrap;
+    width          : 100%;
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
+    text-align     : center;
+    justify-content: center;
+    flex-direction : column;
 }
 
 .info {
@@ -123,4 +127,17 @@ button:hover {
     width    : 100%;
     display  : flex;
     flex-wrap: wrap;
+}
+
+.container {
+    align-items    : center;
+    text-align     : center;
+    justify-content: center;
+    display        : flex;
+    flex-direction : column;
+    width      : 100%;
+}
+.btn-group{
+    display:flex;
+    flex-direction: column;
 }
